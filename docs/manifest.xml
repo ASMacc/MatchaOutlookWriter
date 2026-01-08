@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+          xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.1"
+          xsi:type="MailApp">
+
+  <Id>YOUR_TENANT_GUID</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Your Team</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Matcha Email Helper"/>
+  <Description DefaultValue="Rewrite drafts using Matcha AI."/>
+  <IconUrl DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/icon-128.png"/>
+  <SupportUrl DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO"/>
+
+  <AppDomains>
+    <AppDomain>https://YOUR_GH_PAGES_DOMAIN</AppDomain>
+    <AppDomain>https://matchaflow.harriscomputer.com</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.8"/>
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <Form xsi:type="ItemEdit">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/taskpane.html"/>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadWriteItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
+  </Rule>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="grpMatcha">
+                <Label resid="resGroupLabel"/>
+                <Control xsi:type="Button" id="btnMatchaTaskpane">
+                  <Label resid="resButtonLabel"/>
+                  <Supertip>
+                    <Title resid="resButtonLabel"/>
+                    <Description resid="resButtonDesc"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon16"/>
+                    <bt:Image size="32" resid="icon32"/>
+                    <bt:Image size="80" resid="icon80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="resTaskpaneUrl"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="icon16" DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/icon-16.png"/>
+        <bt:Image id="icon32" DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/icon-32.png"/>
+        <bt:Image id="icon80" DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="resTaskpaneUrl" DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="resGroupLabel" DefaultValue="Matcha"/>
+        <bt:String id="resButtonLabel" DefaultValue="Rewrite with Matcha"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="resButtonDesc" DefaultValue="Opens a task pane to rewrite the current draft using Matcha AI."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
