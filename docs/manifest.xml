@@ -2,7 +2,7 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.1"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides"
            xsi:type="MailApp">
 
   <!-- MUST be a real GUID -->
@@ -51,7 +51,7 @@
   </Rule>
 
   <!-- IMPORTANT: Use the mailappor prefix so schema validation passes -->
-  <mailappor:VersionOverrides xsi:type="mailappor:VersionOverridesV1_1">
+  <mailappor:VersionOverrides xsi:type="mailappor:VersionOverridesV1_0">
     <mailappor:Hosts>
       <mailappor:Host xsi:type="mailappor:MailHost">
         <mailappor:DesktopFormFactor>
