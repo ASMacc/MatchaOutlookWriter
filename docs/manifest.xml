@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-          xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.1"
-          xsi:type="MailApp">
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.1"
+           xsi:type="MailApp">
 
-  <Id>YOUR_TENANT_GUID</Id>
+  <!-- MUST be a real GUID -->
+  <Id>9fde97fa-c70a-4a01-805e-3064237c2fb2</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>Your Team</ProviderName>
+  <ProviderName>Matcha Demo</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
+
   <DisplayName DefaultValue="Matcha Email Helper"/>
   <Description DefaultValue="Rewrite drafts using Matcha AI."/>
-  <IconUrl DefaultValue="https://matchaflow.harriscomputer.com/assets/MatchaAILogoFavIcon-BJjK24_i.svg"/>
-  <HighResolutionIconUrl DefaultValue="https://matchaflow.harriscomputer.com/assets/MatchaAILogoFavIcon-BJjK24_i.svg"/>
-  <SupportUrl DefaultValue="https://asmacc.github.io/MatchaOutlookWriter"/>
+
+  <!-- Use PNGs (SVG will fail validation) -->
+  <IconUrl DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/assets/MatchaAILogo_80.png"/>
+  <HighResolutionIconUrl DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/assets/MatchaAILogo_80.png"/>
+
+  <!-- Must be reachable (200 OK). taskpane.html is known-good. -->
+  <SupportUrl DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/taskpane.html"/>
 
   <AppDomains>
     <AppDomain>https://asmacc.github.io</AppDomain>
@@ -39,47 +45,48 @@
   </FormSettings>
 
   <Permissions>ReadWriteItem</Permissions>
+
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit"/>
   </Rule>
 
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
-    <Hosts>
-      <Host xsi:type="MailHost">
-        <DesktopFormFactor>
-          <ExtensionPoint xsi:type="MessageComposeCommandSurface">
-            <OfficeTab id="TabDefault">
-              <Group id="grpMatcha">
-                <Label resid="resGroupLabel"/>
-                <Control xsi:type="Button" id="btnMatchaTaskpane">
-                  <Label resid="resButtonLabel"/>
-                  <Supertip>
-                    <Title resid="resButtonLabel"/>
-                    <Description resid="resButtonDesc"/>
-                  </Supertip>
-                  <Icon>
+  <!-- IMPORTANT: Use the mailappor prefix so schema validation passes -->
+  <mailappor:VersionOverrides xsi:type="mailappor:VersionOverridesV1_1">
+    <mailappor:Hosts>
+      <mailappor:Host xsi:type="mailappor:MailHost">
+        <mailappor:DesktopFormFactor>
+          <mailappor:ExtensionPoint xsi:type="mailappor:MessageComposeCommandSurface">
+            <mailappor:OfficeTab id="TabDefault">
+              <mailappor:Group id="grpMatcha">
+                <mailappor:Label resid="resGroupLabel"/>
+                <mailappor:Control xsi:type="mailappor:Button" id="btnMatchaTaskpane">
+                  <mailappor:Label resid="resButtonLabel"/>
+                  <mailappor:Supertip>
+                    <mailappor:Title resid="resButtonLabel"/>
+                    <mailappor:Description resid="resButtonDesc"/>
+                  </mailappor:Supertip>
+                  <mailappor:Icon>
                     <bt:Image size="16" resid="icon16"/>
                     <bt:Image size="32" resid="icon32"/>
                     <bt:Image size="80" resid="icon80"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="resTaskpaneUrl"/>
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-        </DesktopFormFactor>
-      </Host>
-    </Hosts>
+                  </mailappor:Icon>
+                  <mailappor:Action xsi:type="mailappor:ShowTaskpane">
+                    <mailappor:SourceLocation resid="resTaskpaneUrl"/>
+                  </mailappor:Action>
+                </mailappor:Control>
+              </mailappor:Group>
+            </mailappor:OfficeTab>
+          </mailappor:ExtensionPoint>
+        </mailappor:DesktopFormFactor>
+      </mailappor:Host>
+    </mailappor:Hosts>
 
-    <Resources>
-	  <bt:Images>
-	    <bt:Image id="icon16" DefaultValue="https://matchaflow.harriscomputer.com/assets/MatchaAILogoFavIcon-BJjK24_i.svg"/>
-	    <bt:Image id="icon32" DefaultValue="https://matchaflow.harriscomputer.com/assets/MatchaAILogoFavIcon-BJjK24_i.svg"/>
-	    <bt:Image id="icon80" DefaultValue="https://matchaflow.harriscomputer.com/assets/MatchaAILogoFavIcon-BJjK24_i.svg"/>
-	  </bt:Images>
-
+    <mailappor:Resources>
+      <bt:Images>
+        <bt:Image id="icon16" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/assets/MatchaAILogo_16.png"/>
+        <bt:Image id="icon32" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/assets/MatchaAILogo_32.png"/>
+        <bt:Image id="icon80" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/assets/MatchaAILogo_80.png"/>
+      </bt:Images>
       <bt:Urls>
         <bt:Url id="resTaskpaneUrl" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/taskpane.html"/>
       </bt:Urls>
@@ -90,6 +97,7 @@
       <bt:LongStrings>
         <bt:String id="resButtonDesc" DefaultValue="Opens a task pane to rewrite the current draft using Matcha AI."/>
       </bt:LongStrings>
-    </Resources>
-  </VersionOverrides>
+    </mailappor:Resources>
+  </mailappor:VersionOverrides>
+
 </OfficeApp>
