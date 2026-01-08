@@ -11,9 +11,9 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Matcha Email Helper"/>
   <Description DefaultValue="Rewrite drafts using Matcha AI."/>
-  <IconUrl DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/icon-64.png"/>
-  <HighResolutionIconUrl DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/icon-128.png"/>
-  <SupportUrl DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO"/>
+  <IconUrl DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/icon-128.png"/>
+  <SupportUrl DefaultValue="https://asmacc.github.io/MatchaOutlookWriter"/>
 
   <AppDomains>
     <AppDomain>https://YOUR_GH_PAGES_DOMAIN</AppDomain>
@@ -33,7 +33,7 @@
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/taskpane.html"/>
+        <SourceLocation DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/taskpane.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -75,12 +75,12 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="icon16" DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/icon-16.png"/>
-        <bt:Image id="icon32" DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/icon-32.png"/>
-        <bt:Image id="icon80" DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/icon-80.png"/>
+        <bt:Image id="icon16" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/icon-16.png"/>
+        <bt:Image id="icon32" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/icon-32.png"/>
+        <bt:Image id="icon80" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="resTaskpaneUrl" DefaultValue="https://YOUR_GH_PAGES_DOMAIN/YOUR_REPO/taskpane.html"/>
+        <bt:Url id="resTaskpaneUrl" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="resGroupLabel" DefaultValue="Matcha"/>
