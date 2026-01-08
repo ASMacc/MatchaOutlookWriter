@@ -11,12 +11,12 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Matcha Email Helper"/>
   <Description DefaultValue="Rewrite drafts using Matcha AI."/>
-  <IconUrl DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/icon-64.png"/>
-  <HighResolutionIconUrl DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/icon-128.png"/>
+  <IconUrl DefaultValue="https://matchaflow.harriscomputer.com/assets/MatchaAILogoFavIcon-BJjK24_i.svg"/>
+  <HighResolutionIconUrl DefaultValue="https://matchaflow.harriscomputer.com/assets/MatchaAILogoFavIcon-BJjK24_i.svg"/>
   <SupportUrl DefaultValue="https://asmacc.github.io/MatchaOutlookWriter"/>
 
   <AppDomains>
-    <AppDomain>https://YOUR_GH_PAGES_DOMAIN</AppDomain>
+    <AppDomain>https://asmacc.github.io</AppDomain>
     <AppDomain>https://matchaflow.harriscomputer.com</AppDomain>
   </AppDomains>
 
@@ -74,11 +74,12 @@
     </Hosts>
 
     <Resources>
-      <bt:Images>
-        <bt:Image id="icon16" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/icon-16.png"/>
-        <bt:Image id="icon32" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/icon-32.png"/>
-        <bt:Image id="icon80" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/icon-80.png"/>
-      </bt:Images>
+	  <bt:Images>
+	    <bt:Image id="icon16" DefaultValue="https://matchaflow.harriscomputer.com/assets/MatchaAILogoFavIcon-BJjK24_i.svg"/>
+	    <bt:Image id="icon32" DefaultValue="https://matchaflow.harriscomputer.com/assets/MatchaAILogoFavIcon-BJjK24_i.svg"/>
+	    <bt:Image id="icon80" DefaultValue="https://matchaflow.harriscomputer.com/assets/MatchaAILogoFavIcon-BJjK24_i.svg"/>
+	  </bt:Images>
+
       <bt:Urls>
         <bt:Url id="resTaskpaneUrl" DefaultValue="https://asmacc.github.io/MatchaOutlookWriter/taskpane.html"/>
       </bt:Urls>
